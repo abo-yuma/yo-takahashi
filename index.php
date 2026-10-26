@@ -1,25 +1,27 @@
 <?php get_header(); ?>
 
-<div class="site-content">
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
 
-            <article <?php post_class(); ?>>
-                <h2>
-                    <a href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h2>
+    <?php while (have_posts()) : the_post(); ?>
 
-                <?php the_content(); ?>
-            </article>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?>>
 
-        <?php endwhile; ?>
-    <?php else : ?>
+            <header class="entry-header">
+                <?php the_title('<h2 class="page-title"><a href="' . esc_url(get_permalink()) . '">', '</a></h2>'); ?>
+            </header>
 
-        <p><?php esc_html_e('No content found.', 'yo23-takahashi'); ?></p>
+            <div class="entry-content">
+                <?php the_excerpt(); ?>
+            </div>
 
-    <?php endif; ?>
-</div>
+        </article>
+
+    <?php endwhile; ?>
+
+<?php else : ?>
+
+    <p>No content found.</p>
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

@@ -4,37 +4,44 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_uri()); ?>">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <div class="site">
+    <div id="wrapper" class="hfeed">
 
-        <header class="site-header">
+        <header id="header" class="site-header">
 
-            <div class="site-branding">
-                <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <?php bloginfo('name'); ?>
+            <?php if (get_header_image()) : ?>
+
+                <div class="site-header-image">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                        <img
+                            src="<?php echo esc_url(get_header_image()); ?>"
+                            width="900"
+                            height="150"
+                            alt="<?php echo esc_attr(get_bloginfo('name')); ?>">
                     </a>
-                <?php endif; ?>
-            </div>
+                </div><!-- .site-header-image -->
 
-            <nav class="site-navigation" aria-label="<?php esc_attr_e('Primary Menu', 'yo23-takahashi'); ?>">
+            <?php endif; ?>
+
+            <nav class="site-navigation" aria-label="<?php esc_attr_e('Primary Menu', 'yo-takahashi'); ?>">
                 <?php
-                wp_nav_menu(array(
-                    'theme_location' => 'primary',
-                    'container'      => false,
-                    'menu_class'     => 'primary-menu',
-                    'fallback_cb'    => false,
-                ));
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'primary',
+                        'menu_class'     => 'primary-menu',
+                        'container'      => false,
+                        'fallback_cb'    => false,
+                    )
+                );
                 ?>
-            </nav>
+            </nav><!-- .site-navigation -->
 
-        </header>
+        </header><!-- #header -->
 
-        <main class="site-main">
+        <main id="main" class="site-main">

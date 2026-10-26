@@ -1,6 +1,6 @@
-</main>
+</main><!-- #main -->
 
-<footer class="site-footer">
+<footer id="footer" class="site-footer">
 
     <div class="site-footer-content">
 
@@ -14,7 +14,7 @@
                     </a>
                 </li>
             </ul>
-        </section>
+        </section><!-- .site-footer-contact -->
 
         <section class="site-footer-related">
             <h4><?php esc_html_e('Related Links', 'yo23-takahashi'); ?></h4>
@@ -25,29 +25,23 @@
                         Thai-Japanese Interpreter
                     </a>
                 </li>
-                <li>
-                    <a href="concentrate" target="_blank" rel="noopener noreferrer">
-                        Concentrate Your Mind
-                    </a>
-                </li>
             </ul>
-        </section>
+        </section><!-- .site-footer-related -->
 
         <div class="site-footer-copyright">
             <p>
-                Copyright &copy; <?php echo esc_html(date('Y')); ?>
+                Copyright &copy; <?php echo esc_html(wp_date('Y')); ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php echo esc_html(wp_parse_url(home_url('/'), PHP_URL_HOST)); ?>
                 </a>
-                Powered by Yuma Takahashi.
             </p>
-        </div>
+        </div><!-- .site-footer-copyright -->
 
-    </div>
+    </div><!-- .site-footer-content -->
 
-</footer>
+</footer><!-- #footer -->
 
-</div>
+</div><!-- #wrapper -->
 
 <?php wp_footer(); ?>
 </body>
