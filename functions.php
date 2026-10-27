@@ -5,11 +5,13 @@
  *
  * @package WordPress
  * @subpackage YO_TAKAHASHI
- * @since YO TAKAHASHI 2010 1.0
+ * @since YO TAKAHASHI 1.0
  */
 
 /**
  * Sets up theme features and registers navigation menus.
+ * 
+ * @since YO TAKAHASHI 1.0
  *
  * @return void
  */
@@ -53,7 +55,9 @@ add_action('after_setup_theme', 'yo23_takahashi_setup');
  * Enqueues Google Fonts used by the theme.
  *
  * Loads Josefin Sans for navigation and Lato for body text.
- *
+ * 
+ * @since YO TAKAHASHI 1.0
+ * 
  * @return void
  */
 function yo_takahashi_enqueue_fonts() {
@@ -71,6 +75,8 @@ add_action('wp_enqueue_scripts', 'yo_takahashi_enqueue_fonts');
  *
  * Loads the JavaScript responsible for the responsive navigation
  * and off-canvas menu interactions on the frontend.
+ * 
+ * @since YO TAKAHASHI 1.0
  *
  * @return void
  */
