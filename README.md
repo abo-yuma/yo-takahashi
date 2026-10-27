@@ -6,21 +6,14 @@
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759B?logo=wordpress&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.0.0-green)
 
+<img src="screenshot.png" alt="Current Design" width="700">
+
 A simple and clean custom WordPress theme for [yo-takahashi.com](https://yo-takahashi.com/). 
 
 This theme was created to convert a legacy PHP website with a custom-built backend to WordPress CMS while preserving some of its original design.
 
 The website's concept and design were repurposed from a personal website into a domain landing page reserved for potential future sale.
 
-## Design
-
-**Previous Design**
-
-<img src="old-screenshot.png" alt="Current Design" width="700">
-
-**Current Design**
-
-<img src="screenshot.png" alt="Current Design" width="700">
 
 ## Support
 
