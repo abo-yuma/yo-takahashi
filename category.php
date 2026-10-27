@@ -5,9 +5,9 @@
  *
  * @package Yo_Takahashi
  */
-
-get_header();
 ?>
+
+<?php get_header(); ?>
 
 <header class="archive-header">
     <h1 class="archive-title">
