@@ -4,11 +4,13 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-21759B?logo=wordpress&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.0-green)
+![Version](https://img.shields.io/badge/version-1.0.0-green)
 
-A custom WordPress theme for [yo-takahashi.com](https://yo-takahashi.com/). that converts a legacy static PHP website into a CMS while preserving its original design.
+A simple and clean custom WordPress theme for [yo-takahashi.com](https://yo-takahashi.com/). 
 
-I repurposed the website from a personal website into a domain landing page reserved for potential future sale.
+This theme was created to convert a legacy PHP website with a custom-built backend to WordPress CMS while preserving some of its original design.
+
+The website's concept and design were repurposed from a personal website into a domain landing page reserved for potential future sale.
 
 ## Design
 

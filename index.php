@@ -1,3 +1,15 @@
+<?php
+
+/**
+ * The main template file.
+ *
+ * This template displays a list of posts when no more specific template
+ * matches the query.
+ *
+ * @package Yo_Takahashi
+ */
+?>
+
 <?php get_header(); ?>
 
 <?php if (have_posts()) : ?>
