@@ -11,6 +11,33 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
+    <!-- Mobile Off-canvas Navigation -->
+    <nav
+        id="offcanvas-navigation"
+        class="offcanvas-navigation"
+        aria-label="<?php esc_attr_e('Mobile Menu', 'yo-takahashi'); ?>"
+        aria-hidden="true"
+        inert>
+
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'primary',
+            'menu_class'     => 'offcanvas-menu',
+            'container'      => false,
+            'fallback_cb'    => false,
+        ));
+        ?>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <button
+        class="offcanvas-overlay"
+        id="offcanvas-overlay"
+        type="button"
+        aria-label="<?php esc_attr_e('Close menu', 'yo-takahashi'); ?>"
+        tabindex="-1"
+        hidden></button>
+
     <div id="wrapper" class="hfeed">
 
         <header id="header" class="site-header">
@@ -29,6 +56,20 @@
 
             <?php endif; ?>
 
+            <!-- Mobile Hamburger -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-controls="offcanvas-navigation"
+                aria-expanded="false"
+                aria-label="<?php esc_attr_e('Open menu', 'yo-takahashi'); ?>">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Navigation -->
             <nav class="site-navigation" aria-label="<?php esc_attr_e('Primary Menu', 'yo-takahashi'); ?>">
                 <?php
                 wp_nav_menu(

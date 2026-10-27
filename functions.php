@@ -65,3 +65,25 @@ function yo_takahashi_enqueue_fonts() {
     );
 }
 add_action('wp_enqueue_scripts', 'yo_takahashi_enqueue_fonts');
+
+/**
+ * Enqueue the navigation script.
+ *
+ * Loads the JavaScript responsible for the responsive navigation
+ * and off-canvas menu interactions on the frontend.
+ *
+ * @return void
+ */
+function yo_takahashi_enqueue_navigation_script() {
+    wp_enqueue_script(
+        'yo-takahashi-navigation',
+        get_theme_file_uri('assets/js/navigation.js'),
+        array(),
+        '1.0.0',
+        true
+    );
+}
+add_action(
+    'wp_enqueue_scripts',
+    'yo_takahashi_enqueue_navigation_script'
+);
