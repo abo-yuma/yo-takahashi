@@ -38,7 +38,7 @@ body {
 
 .site-header,
 .site-main,
-.site-footer-content {
+.site-footer {
   width: 100%;
   max-width: 900px;
   margin-inline: auto;
@@ -88,11 +88,6 @@ body {
   margin: 0 0 4px;
   font-size: 12px;
   font-weight: normal;
-}
-
-.site-footer a,
-.site-footer-copyright {
-  font-size: 11px;
 }
 
 /*--------------------------------------------------------------
@@ -206,12 +201,10 @@ a:hover {
 --------------------------------------------------------------*/
 
 .site-footer {
-  color: #ddd;
-  background: #000;
   text-align: center;
 }
 
-.site-footer-content {
+.site-footer {
   width: 100%;
   max-width: 900px;
   margin-inline: auto;
@@ -222,31 +215,8 @@ a:hover {
   font-weight: normal;
 }
 
-.site-footer a,
 .site-footer-copyright {
   font-size: 14px;
-}
-
-.site-footer a {
-  display: inline;
-  color: #ddd;
-}
-
-.site-footer-contact,
-.site-footer-related {
-  margin-bottom: 10px;
-}
-
-.site-footer-contact ul,
-.site-footer-related ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.site-footer-contact li,
-.site-footer-related li {
-  margin: 4px 0;
 }
 
 /*--------------------------------------------------------------
@@ -276,7 +246,7 @@ summary,
 
 .site-header,
 .site-main,
-.site-footer-content {
+.site-footer {
   width: 100%;
   max-width: 900px;
   margin-inline: auto;
