@@ -77,11 +77,18 @@ body {
   line-height: 1.75;
 }
 
-.page-title {
+.page-title,
+.post-title {
   margin: 0;
   font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
+}
+
+.post-date {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
 }
 
 .site-footer h4 {
