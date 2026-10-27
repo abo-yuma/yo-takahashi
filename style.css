@@ -2,9 +2,407 @@
 Theme Name: Yo Takahashi
 Theme URI: https://yo-takahashi.com/
 Author: Yo Takahashi
-Description: A custom WordPress theme for Yo Takahashi's personal website.
+Description: A custom WordPress theme for Yo Takahashi's reserved domain landing page.
 Version: 1.0.0
 Requires at least: 6.0
 Requires PHP: 8.0
-Text Domain: yo23-takahashi
+Text Domain: yo-takahashi
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
+
+/*--------------------------------------------------------------
+# Reset
+--------------------------------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+#wrapper {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.site-main {
+  min-height: 500px;
+  margin-bottom: 35px;
+  padding-inline: 15px;
+}
+
+.site-navigation {
+  width: 100%;
+  margin: 15px 0 25px;
+}
+
+.site-footer {
+  padding: 10px;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+body {
+  color: #222;
+  background: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.page-title,
+.post-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.post-date {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.site-footer h4 {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #355d91;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.site-header-image {
+  width: 100%;
+}
+
+.site-header-image a {
+  display: block;
+}
+
+.site-header-image img {
+  width: 100%;
+}
+
+.primary-menu a {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+.primary-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-menu a {
+  display: block;
+  padding-block: 4px;
+  color: #111;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-text-stroke: 0;
+  transition: color 0.2s ease;
+}
+
+.primary-menu a:hover,
+.primary-menu a:focus-visible {
+  color: #111;
+  -webkit-text-stroke: 0.5px currentColor;
+}
+
+/* Active menu item */
+.primary-menu .current-menu-item > a,
+.primary-menu .current_page_item > a,
+.primary-menu .current-menu-ancestor > a,
+.primary-menu .current_page_ancestor > a {
+  -webkit-text-stroke: 0.5px currentColor;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+.page-content {
+  margin: 0;
+}
+
+.entry-header {
+  margin-bottom: 20px;
+}
+
+.entry-content {
+  overflow-wrap: anywhere;
+}
+
+.entry-content img {
+  max-width: 100%;
+}
+
+.page-featured-image {
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+  text-align: center;
+}
+
+.site-footer {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.site-footer h4 {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.site-footer-copyright {
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Custom Cursor
+--------------------------------------------------------------*/
+
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+label,
+summary,
+[role="button"],
+[tabindex]:not([tabindex="-1"]) {
+  cursor:
+    url("/wp-content/themes/yo-takahashi/assets/images/custom-cursor.png") 0 0,
+    pointer;
+}
+
+/*--------------------------------------------------------------
+# Responsive Layout
+--------------------------------------------------------------*/
+
+.site-header,
+.site-main,
+.site-footer {
+  width: 100%;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/*--------------------------------------------------------------
+# Mobile Navigation Toggle
+--------------------------------------------------------------*/
+
+.menu-toggle {
+  display: none;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: #111;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: 6px 0;
+  background: currentColor;
+}
+
+/*--------------------------------------------------------------
+# Off-canvas Navigation
+--------------------------------------------------------------*/
+
+.offcanvas-navigation {
+  position: fixed;
+  z-index: 1002;
+  inset: 0 auto 0 0;
+  width: min(320px, 85vw);
+  padding: 60px 25px 25px;
+  overflow-y: auto;
+  background: #fff;
+
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.offcanvas-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offcanvas-menu a {
+  display: block;
+  color: #111;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.offcanvas-menu a:hover,
+.offcanvas-menu a:focus-visible {
+  text-decoration: underline;
+}
+
+.offcanvas-overlay {
+  position: fixed;
+  z-index: 1001;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: rgb(0 0 0 / 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.offcanvas-overlay[hidden] {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Push Effect
+--------------------------------------------------------------*/
+
+#wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Prevent background scrolling when the off-canvas menu is open */
+html.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open .offcanvas-navigation {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+body.menu-open .offcanvas-overlay {
+  opacity: 1;
+}
+
+body.menu-open #wrapper {
+  transform: translateX(min(320px, 85vw));
+}
+
+/*--------------------------------------------------------------
+# Mobile Styles
+--------------------------------------------------------------*/
+
+@media (max-width: 767.98px) {
+  #wrapper {
+    margin-top: 0;
+  }
+
+  .site-navigation {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .offcanvas-navigation {
+    display: block;
+  }
+
+  .offcanvas-overlay:not([hidden]) {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Reduced Motion
+--------------------------------------------------------------*/
+
+@media (prefers-reduced-motion: reduce) {
+  #wrapper,
+  .offcanvas-navigation,
+  .offcanvas-overlay {
+    transition: none;
+  }
+}
