@@ -7,6 +7,8 @@ Version: 1.0.0
 Requires at least: 6.0
 Requires PHP: 8.0
 Text Domain: yo-takahashi
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*--------------------------------------------------------------
@@ -370,7 +372,6 @@ body.menu-open #wrapper {
 --------------------------------------------------------------*/
 
 @media (max-width: 767.98px) {
-  
   #wrapper {
     margin-top: 0;
   }
