@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * The template for displaying all pages.
+ *
+ * @package Yo_Takahashi
+ */
+?>
+
 <?php get_header(); ?>
 
 <?php
