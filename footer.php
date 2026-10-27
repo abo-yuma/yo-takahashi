@@ -5,10 +5,14 @@
         <div class="site-footer-copyright">
             <p>
                 <span aria-hidden="true">🌐</span>
-                Domain Reserved &middot;
+                Reserved for Future Sale &middot;
                 &copy;
                 <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php echo esc_html(wp_parse_url(home_url('/'), PHP_URL_HOST)); ?>
+                </a>
+                &middot;
+                <a href="<?php echo esc_url('mailto:' . sanitize_email(get_option('admin_email'))); ?>">
+                    Inquiries Welcome
                 </a>
             </p>
         </div><!-- .site-footer-copyright -->
