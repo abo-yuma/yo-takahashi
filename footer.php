@@ -6,8 +6,9 @@
             <p>
                 <span aria-hidden="true">🌐</span>
                 Domain Reserved &middot;
+                &copy;
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    &copy; <?php echo esc_html(wp_parse_url(home_url('/'), PHP_URL_HOST)); ?>
+                    <?php echo esc_html(wp_parse_url(home_url('/'), PHP_URL_HOST)); ?>
                 </a>
             </p>
         </div><!-- .site-footer-copyright -->

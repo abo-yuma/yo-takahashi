@@ -2,7 +2,7 @@
 Theme Name: Yo Takahashi
 Theme URI: https://yo-takahashi.com/
 Author: Yo Takahashi
-Description: A custom WordPress theme for Yo Takahashi's personal website.
+Description: A custom WordPress theme for Yo Takahashi's reserved domain landing page.
 Version: 1.0.0
 Requires at least: 6.0
 Requires PHP: 8.0
@@ -34,6 +34,7 @@ body {
 
 #wrapper {
   width: 100%;
+  margin-top: 30px;
 }
 
 .site-header,
@@ -42,10 +43,6 @@ body {
   width: 100%;
   max-width: 900px;
   margin-inline: auto;
-}
-
-.site-header {
-  margin-top: 30px;
 }
 
 .site-main {
@@ -57,7 +54,6 @@ body {
 .site-navigation {
   width: 100%;
   margin: 15px 0 25px;
-  padding-inline: 15px;
 }
 
 .site-footer {
@@ -374,7 +370,8 @@ body.menu-open #wrapper {
 --------------------------------------------------------------*/
 
 @media (max-width: 767.98px) {
-  .site-header {
+  
+  #wrapper {
     margin-top: 0;
   }
 
