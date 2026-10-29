@@ -2,9 +2,9 @@
 Theme Name: Yo Takahashi
 Theme URI: https://yo-takahashi.com/
 Author: Yo Takahashi
-Author URI: https://yo23takahashi.com/
+Author URI: https://github.com/abo-yuma
 Description: A custom WordPress theme for Yo Takahashi's reserved domain landing page.
-Version: 1.0.0
+Version: 1.1.0
 Requires at least: 6.0
 Requires PHP: 8.0
 Text Domain: yo-takahashi
@@ -179,6 +179,54 @@ a:hover {
   -webkit-text-stroke: 0.5px currentColor;
 }
 
+/* Dropdown Menu */
+.primary-menu li {
+  position: relative;
+}
+
+.primary-menu ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+
+  display: none;
+  min-width: 220px;
+  margin: 0;
+  padding: 8px 0;
+
+  list-style: none;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+/* Show dropdown on hover and keyboard focus */
+.primary-menu li:hover > ul,
+.primary-menu li:focus-within > ul {
+  display: block;
+}
+
+/* Dropdown links */
+.primary-menu ul a {
+  display: block;
+  padding: 8px 16px;
+
+  font-size: 19px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+/* Nested dropdown */
+.primary-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/* Keep dropdown above page content */
+.primary-menu > li {
+  position: relative;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -339,6 +387,66 @@ summary,
   display: none;
 }
 
+/* Off-canvas submenu toggle */
+.offcanvas-menu li {
+  position: relative;
+}
+
+.offcanvas-menu li > a {
+  display: inline-block;
+  max-width: calc(100% - 44px);
+  vertical-align: middle;
+}
+
+.offcanvas-menu .submenu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-size: 22px;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.offcanvas-menu .submenu-toggle[aria-expanded="true"] {
+  transform: rotate(180deg);
+}
+
+.offcanvas-menu .submenu-toggle:focus-visible {
+  outline: 2px solid #355d91;
+  outline-offset: 2px;
+}
+
+/* Hide submenus until their toggle is clicked */
+.offcanvas-menu ul[hidden] {
+  display: none !important;
+}
+
+.offcanvas-menu li > ul:not([hidden]) {
+  display: block;
+  position: static;
+  min-width: 0;
+  margin: 4px 0 8px;
+  padding: 0 0 0 18px;
+  border: 0;
+  list-style: none;
+  background: transparent;
+}
+
+.offcanvas-menu li > ul a {
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 18px;
+  white-space: normal;
+}
+
 /*--------------------------------------------------------------
 # Push Effect
 --------------------------------------------------------------*/
@@ -393,6 +501,26 @@ body.menu-open #wrapper {
 
   .offcanvas-overlay:not([hidden]) {
     display: block;
+  }
+
+  /* Off-canvas submenu */
+  .offcanvas-menu li {
+    position: static;
+  }
+
+  .offcanvas-menu ul {
+    display: block;
+    position: static;
+    min-width: 0;
+    margin: 4px 0 8px;
+    padding: 0 0 0 18px;
+    border: 0;
+    list-style: none;
+  }
+
+  .offcanvas-menu ul a {
+    padding: 5px 0;
+    font-size: 18px;
   }
 }
 

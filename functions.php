@@ -13,7 +13,7 @@
  *
  * @return void
  */
-function yo23_takahashi_setup() {
+function yo_takahashi_setup() {
 
     // Let WordPress manage the document title.
     add_theme_support('title-tag');
@@ -43,10 +43,10 @@ function yo23_takahashi_setup() {
 
     // Register navigation menu.
     register_nav_menus(array(
-        'primary' => __('Primary Menu', 'yo23-takahashi'),
+        'primary' => __('Primary Menu', 'yo-takahashi'),
     ));
 }
-add_action('after_setup_theme', 'yo23_takahashi_setup');
+add_action('after_setup_theme', 'yo_takahashi_setup');
 
 
 /**
